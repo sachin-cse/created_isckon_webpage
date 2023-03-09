@@ -1,0 +1,12 @@
+.navbar .navbar-nav .nav-item a{
+    padding:15px;
+}
+
+.navbar .navbar-nav .nav-btn{
+    padding:5px;
+}
+
+body{
+    background-color: antiquewhite;
+}
+
