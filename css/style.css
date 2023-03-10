@@ -10,3 +10,183 @@ body{
     background-color: antiquewhite;
 }
 
+.navbar-nav .nav-link:hover{
+    background-color: lightgray;
+}
+
+/* content */
+
+* {
+    font-family: "Noto Sans", sans-serif;
+  }
+  /* Grid Container */
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    list-style: none;
+    margin-left: 0 !important;
+    padding-left: 0px !important;
+    padding-top:20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  h1{
+    text-align: center;
+    padding-top:20px;
+    background-color: antiquewhite;
+  }
+  
+  .card {
+    max-width: 400px;
+    min-height: 300px;
+    border-radius: 5px;
+    box-shadow: rgb(149 157 165 / 52%) 0px 8px 24px;
+    background-color: #fff;
+    height: fit-content;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 0;
+    background-size: cover;
+    min-width: 0;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    transition: 0.1s;
+    text-decoration: none;
+  }
+
+  
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+    z-index: -1;
+    background-image: linear-gradient(15deg, #092248, #464da1);
+    opacity: 70%;
+  }
+  
+  .card:after {
+    content: "";
+  }
+  .card:has(.active).card:after {
+    filter: brightness(0.5);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 7px;
+    z-index: -2;
+    backdrop-filter: blur(2px);
+  }
+  .card:has(.active) .card-body {
+    transition: ease-in-out 0.2s;
+    height: auto;
+    opacity: 100%;
+  }
+  .card a {
+    text-decoration: none !important;
+    color: white;
+    overflow: hidden;
+  }
+  
+  .card-content {
+    padding: 0 1em 0 1em;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  .card-title {
+    font-size: 1.6em;
+    margin: 15px 0 15px 0;
+    text-decoration: none !important;
+    color: white !important;
+    font-family: "Lato", sans-serif;
+    position: relative;
+  
+  }
+  .card-title:after {
+    content: '';
+    display: block;
+    margin-top: .5rem;
+    width: 50%;
+    height: 4px;
+    background-color: #49a4d5;
+  }
+  
+  .card-title a {
+    text-decoration: none !important;
+    color: white !important;
+  }
+  
+  .card-body {
+    transition: .2s ease-in-out;
+    margin: 1em 0 1em 0;
+    color: white;
+    opacity: 0;
+    max-height: 0;
+  }
+  .card:hover .card-title:after, .card:focus .card-title:after {
+    width: 100%;
+    transition: .2s ease-in-out;
+  }
+  .card:hover .card-body,
+  .card:focus .card-body {
+    transition: ease-in-out 0.3s;
+    height: 100%;
+    max-height: 8ex;
+    opacity: 100%;
+  }
+  .card:hover.card:after,
+  .card:focus.card:after {
+    filter: brightness(0.5);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 7px;
+    z-index: -2;
+    backdrop-filter: blur(1px);
+  }
+  
+  @media (max-width: 1350px) {
+    .card-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  @media only screen and (max-width: 1100px) {
+    .card-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media only screen and (max-width: 850px) {
+    .card-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media only screen and (max-width: 650px) {
+    .card-container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  
+  @keyframes border {
+    from {
+      width: 0%;
+      left: 50%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+
